@@ -1,0 +1,55 @@
+using System;
+
+namespace CThirdProgram
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Division();
+            
+        }
+
+        static void Division()
+        {
+            int num1;
+            int num2;
+            do
+            {
+                Console.WriteLine("Enter a number: ");
+                num1 = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Enter another number: ");
+                num2 = Convert.ToInt32(Console.ReadLine());
+
+                if (num2 == 0)
+                {
+                    Console.WriteLine("Warning, cannot have 0 as second number, result will be invalid. ");
+                    continue;
+                }
+
+                int result;
+                result = num1 / num2;
+                if (result * num2 != num1)
+                {
+                    if (num1 < num2)
+                    {
+                        Console.WriteLine($"The result is 0, the remainder is {num1}. ");
+                    }
+                    else
+                    {
+                        int result2 = num1 - (result * num2);
+                        Console.WriteLine($"The result is {result}, the remainder is {result2}. ");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine($"The result is {result}, there is no remainder. ");
+                }
+
+            }
+
+            while (num1 != 0);
+
+        }
+    }
+}
